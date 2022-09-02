@@ -7,6 +7,7 @@ module.exports = {
   },
   extends: [
     'next/core-web-vitals',
+    'eslint-config-airbnb',
     'prettier',
     'plugin:import/errors',
     'plugin:import/warnings',
@@ -15,5 +16,26 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser', // Vue项目作为可选
   plugins: ['import', 'prettier', 'react', 'react-hooks'], // Vue项目作为可选
-  rules: {}
+  rules: {
+    'no-console': 'off',
+    'linebreak-style': ['error', 'unix'],
+    'no-cond-assign': ['error', 'except-parens'],
+    'no-unused-expressions': [
+      'error',
+      {
+        allowTernary: true,
+        allowShortCircuit: true,
+        allowTaggedTemplates: true
+      }
+    ],
+    'import/order': 'off',
+    'arrow-parens': ['error', 'as-needed'],
+    'prettier/prettier': 'off',
+    'spaced-comment': ['error', 'always', { markers: ['/'] }],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    'react/function-component-definition': 'off',
+    'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
+    'react/jsx-props-no-spreading': 'off',
+  }
 }
